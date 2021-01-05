@@ -9,8 +9,9 @@ class SearchResults extends React.Component {
                 {/* 
                     - Display list of flights based on search query
                     - Each flight links to a flight page
-                        - ul that maps the flights to an li with a key=flight.id
-                        - each li contains a 'Link to' with the flight route = /flight/:flightID
+                        - ul
+                            - map the flights to an li with a key=flight.id
+                            - each li contains a 'Link to' with the flight route = /flight/:flightID
                  */}
             </div>
         ); // return
