@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 
-import Home from './Home';
 import Search from './Search';
 import Flights from './Flight';
 import SearchResults from '/SearchResults';
