@@ -11,12 +11,16 @@ const BASE_URL = 'http://localhost:3000/';
 
 class Home extends React.Component {
 
+  // placeholder for username until connected to the server
+  userName = 'Luke';
+
   render(){
 
     return (
       <div className="Home">
         <h1>Welcome to Burning Fury Airlines</h1>
         <h2>Don't let the name put you off...</h2>
+        <p>{this.userName}</p>
 
         <Router>
         {/* Do we need a nav for the react pages? Or only for the rails pages? */}
