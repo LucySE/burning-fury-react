@@ -1,5 +1,8 @@
 import React from 'react';
 import './App.css';
+import Home from './Home';
+import Search from './Search.js';
+import SearchResults from './SearchResults';
 
 import { Route, Link, HashRouter as Router  } from 'react-router-dom';
 
@@ -11,15 +14,15 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Welcome to Burning Fury Airlines</h1>
-        <h2>Don't let the name put you off...</h1>
+        <h2>Don't let the name put you off...</h2>
 
         <Router>
           <nav>
             <Link to="/">Home</Link> |
-            <Link to="/search">Search Flights</Link> |
-            <Link to="/teethshop">Teeth Sales</Link>
+            <Link to="/search">Search</Link> |
+            <Link to="/flights=">Flights</Link>
             <br />
-            <Route path="/" component={ SearchForm } /> { /* appears on every route */ }
+            <Route path="/" component={ Search } /> { /* appears on every route */ }
           </nav>
           <hr />
 
@@ -28,15 +31,14 @@ class App extends React.Component {
             // get '/' => 'pages#home'
           }
           <Route exact path="/" component={ Home } />
-          <Route exact path="/procedures" component={ Procedures } />
-          <Route exact path="/teethshop" component={ TeethSales } />
-          <Route exact path="/search/:query" component={ SearchResults } />
+          <Route exact path="/flights" component={ Flights } />
+          <Route exact path="/search/:query" component={ Search } />
 
         </Router>
 
         <footer>
           <hr />
-          &copy; 2021 Unsettling Professionals
+          &copy; 2021 Burning Fury Airlines
         </footer>
 
       </div>
