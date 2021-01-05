@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { PureComponent as Component} 'react';
 import './App.css';
 import axios from 'axios';
+
 import Home from '/Home';
 import Search from '/Search';
 import Flights from '/Flights';
@@ -9,12 +10,12 @@ import SearchResults from '/SearchResults';
 import { Route, Link, HashRouter as Router  } from 'react-router-dom';
 
 
-class App extends React.Component {
+class Home extends React.Component {
 
   render(){
 
     return (
-      <div className="App">
+      <div className="Home">
         <h1>Welcome to Burning Fury Airlines</h1>
         <h2>Don't let the name put you off...</h2>
 
@@ -50,4 +51,4 @@ class App extends React.Component {
 
 } // class App
 
-export default App;
+export default Home;
