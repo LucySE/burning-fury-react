@@ -7,6 +7,7 @@ import SearchResults from './SearchResults';
 
 import { Route, Link, HashRouter as Router  } from 'react-router-dom';
 
+const BASE_URL = 'http://localhost:3000/';
 
 class Home extends React.Component {
 
