@@ -18,6 +18,7 @@ class Home extends React.Component {
         <h2>Don't let the name put you off...</h2>
 
         <Router>
+        {/* Do we need a nav for the react pages? Or only for the rails pages? */}
           <nav>
             <Link to="/">Home</Link> |
             <Link to="/Search">Search</Link>
