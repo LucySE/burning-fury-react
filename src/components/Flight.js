@@ -2,6 +2,18 @@ import React from 'react';
 
 class Flight extends React.Component {
 
+    // fetchReservations() 
+    // will be used in componentDidMount to fetch the initial seat availability then poll the rails server and fetch any changes to the avialability
+
+    // componentDidMount()
+    // Runs as soon as component loads
+    // will fetchReservations()
+
+    // saveReservation()
+    // will save the users reservation 
+    // by posting to the server & updating state of reservation table
+
+
     render() {
         return(
             <h1>Book seat page</h1>
@@ -11,7 +23,7 @@ class Flight extends React.Component {
                 // Origin -> Destination
                 // 
 
-            // Form for seat selection
+            // Form for seat selection (Might be its own component?)
                 // Display seats
                     // Row labels
                     // Column labels
