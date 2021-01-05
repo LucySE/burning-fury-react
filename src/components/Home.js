@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-// import Search from './Search';
+import Search from './Search';
 import Flights from './Flight';
 // import SearchResults from './SearchResults';
 
@@ -23,7 +23,7 @@ class Home extends React.Component {
             <Link to="/Search">Search</Link> |
             <Link to="/flights=">Flights</Link>
             <br />
-            {/* <Route path="/" component={ Search } /> { /* appears on every route */ } 
+              <Route path="/" component={ Search } /> { /* appears on every route */ }
           </nav>
           <hr />
 
@@ -33,7 +33,7 @@ class Home extends React.Component {
           }
           <Route exact path="/Home" component={ Home } />
           <Route exact path="/Flights" component={ Flights } />
-          {/* <Route exact path="/Search/:query" component={ Search } /> */}
+          <Route exact path="/Search/:query" component={ Search } /> 
 
         </Router>
 
@@ -47,6 +47,6 @@ class Home extends React.Component {
 
   } // render()
 
-} // class App
+} // class Home
 
 export default Home;
