@@ -22,17 +22,15 @@ class Home extends React.Component {
         {/* Do we need a nav for the react pages? Or only for the rails pages? */}
           <nav>
             <Link to="/">Home</Link> |
-            <Link to="/Search">Search</Link>
+            <Link to="/search">Search</Link>
             <br />
               <Route path="/" component={ Search } /> { /* appears on every route */ }
           </nav>
           <hr />
 
-          <Route exact path="/Home" component={ Home } />
-          <Route exact path="/Search/:query" component={ SearchResults } /> 
-
-          {/* Temporary route for testing Flight reservation component */}
-          <Route exact path="/flight" component={ Flight } /> 
+          <Route exact path="/home" component={ Home } />
+          <Route exact path="/search/:query" component={ SearchResults } /> 
+          <Route exact path="/flight/:flightNumber" component={ Flight } /> 
 
         </Router>
 
