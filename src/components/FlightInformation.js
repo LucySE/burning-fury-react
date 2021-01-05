@@ -1,18 +1,15 @@
 import React from 'react';
 
+// Returns information about a Flight for rendering
 const FlightInformation = (props) => {
     return(
         <div>
-            Date: XXXX-XX-XX
-            Flight number: XXXX
-            Origin: Xxxxxxxxx
-            Destination: Xxxxxxxxx
-            {/* Date: {props.date}
-            Flight number: {props.flightNumber}
-            Origin: {props.origin}
-            Destination: {props.destination} */}
+            {/* This is placeholder until we have the data to display. Refer commented out code below */}
+            <p>Date Flight# Origin &lt; Destination</p>
+            
+            {/* <p>{props.date} {props.flightNumber} {props.origin} {props.destination} </p> */}
         </div>
-    )
-}
+    ); // return
+} // FlightInformation
 
 export default FlightInformation;
