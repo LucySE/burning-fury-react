@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import Search from './Search';
 import Flight from './Flight';
-// import SearchResults from './SearchResults';
+import SearchResults from './SearchResults';
 
 import { Route, Link, HashRouter as Router  } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ class Home extends React.Component {
           <hr />
 
           <Route exact path="/Home" component={ Home } />
-          {/* <Route exact path="/Search/:query" component={ Flight } />  */}
+          <Route exact path="/Search/:query" component={ SearchResults } /> 
 
           {/* Temporary route for testing Flight reservation component */}
           <Route exact path="/flight" component={ Flight } /> 
@@ -40,7 +40,7 @@ class Home extends React.Component {
         </footer>
 
       </div>
-    );
+    ); // return
 
   } // render()
 } // class Home
