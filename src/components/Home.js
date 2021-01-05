@@ -1,10 +1,10 @@
-import React, { PureComponent as Component} 'react';
+import React from 'react';
 import './App.css';
 import axios from 'axios';
 
-import Home from '/Home';
-import Search from '/Search';
-import Flights from '/Flights';
+import Home from './Home';
+import Search from './Search';
+import Flights from './Flight';
 import SearchResults from '/SearchResults';
 
 import { Route, Link, HashRouter as Router  } from 'react-router-dom';
