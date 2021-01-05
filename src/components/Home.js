@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import Search from './Search';
-import Flights from './Flight';
+import Flight from './Flight';
 // import SearchResults from './SearchResults';
 
 import { Route, Link, HashRouter as Router  } from 'react-router-dom';
@@ -20,20 +20,17 @@ class Home extends React.Component {
         <Router>
           <nav>
             <Link to="/">Home</Link> |
-            <Link to="/Search">Search</Link> |
-            <Link to="/flights=">Flights</Link>
+            <Link to="/Search">Search</Link>
             <br />
               <Route path="/" component={ Search } /> { /* appears on every route */ }
           </nav>
           <hr />
 
-          {
-            // Like Rails routes.rb:
-            // get '/' => 'pages#home'
-          }
           <Route exact path="/Home" component={ Home } />
-          <Route exact path="/Flights" component={ Flights } />
-          <Route exact path="/Search/:query" component={ Search } /> 
+          {/* <Route exact path="/Search/:query" component={ Flight } />  */}
+
+          {/* Temporary route for testing Flight reservation component */}
+          <Route exact path="/flight" component={ Flight } /> 
 
         </Router>
 
@@ -46,7 +43,6 @@ class Home extends React.Component {
     );
 
   } // render()
-
 } // class Home
 
 export default Home;
