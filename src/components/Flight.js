@@ -1,5 +1,8 @@
 import React from 'react';
 
+// flight details functional component
+// Render flight details based on route params for flight
+
 class Flight extends React.Component {
 
     // fetchReservations() 
@@ -13,7 +16,6 @@ class Flight extends React.Component {
     // will save the users reservation 
     // by posting to the server & updating state of reservation table
 
-
     render() {
         return(
             <h1>Book seat page</h1>
@@ -21,7 +23,6 @@ class Flight extends React.Component {
                 // Date
                 // Flight number
                 // Origin -> Destination
-                // 
 
             // Form for seat selection (Might be its own component?)
                 // Display seats
@@ -31,6 +32,7 @@ class Flight extends React.Component {
                         // Available
                         // Unavailable
                         // Selected
+            
 
                 // Seat selection
                 // Submit button
