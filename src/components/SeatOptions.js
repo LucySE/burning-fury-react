@@ -2,33 +2,19 @@ import React from 'react';
 
 class SeatOptions extends React.Component {
 
-    //     {/* 
-    // // Form for seat selection (Might be its own component?)
-    //     // Display seats
-    //         // Row labels
-    //         // Column labels
-    //         // Seats
-    //             // Available
-    //             // Unavailable
-    //             // Selected */}
-
     state = {
         seatValue: '-',
-        selection: 'x'
+        selection: '-'
         // isTaken: false
     };
 
+    // componentDidUpdate(){
+
+    // }
+
+    // Number of rows and columns on plane
     rows = this.props.rows;
     columns = this.props.columns;
-
-    // checkSeatAvailable = () => {
-    //     // if (seatUnavilable) {
-    //         // this.setState({isTaken: true})
-    //     // else {
-    //         // this.setState({isTaken: false})
-    //     // }
-    //     // }
-    // }
 
     createColumnLabels = () => {
         let labels = [];
@@ -56,22 +42,24 @@ class SeatOptions extends React.Component {
 
             // Add seats to an individual row
             for (let j = 0; j < this.columns; j++){
-                // if (this.state.isTaken){
-                //     seat.push(<td>{`X`}</td>)
-                // } else {
-                    if (String.fromCharCode(i + 1 + 64) + j === this.state.selection){
-                        seat.push(<td>H</td>)
-                    } else {
-                        seat.push(
-                        <td>
-                            <button 
-                                onClick={() => this.setState({selection: String.fromCharCode(i + 1 + 64) + j})}
-                            >
-                                {this.state.seatValue}
-                            </button>
-                        </td>)
-                    }
-                // }
+                // Displays a H if the user has selected the seat and prevents them from selecting their selected seat
+                if (String.fromCharCode(i + 1 + 64) + j === this.state.selection){
+                    seat.push(<td>H</td>)
+                } else {
+                    // Add button to seat array as table data
+                    seat.push(
+                    <td>
+                    {/* If the user selects a seat, show an alert indicating seat location */}
+                        <button 
+                            onClick={() => {
+                                this.setState({selection: String.fromCharCode(i + 1 + 64) + j})
+                                alert('You selected: ' + String.fromCharCode(j + 1 + 64) + (i+1));
+                                }}
+                        >
+                            {this.state.seatValue}
+                        </button>
+                    </td>)
+                }
             } // for (j)
 
             // Add the row to the array of seats
@@ -98,6 +86,6 @@ class SeatOptions extends React.Component {
     }
 } // class SeatOptions
 
-// Selected option will need to be sent to the flight page (parent) via a function
+// Selected option will need to be sent to the flight page (parent) via a function for rendering
 
 export default SeatOptions;
