@@ -1,9 +1,12 @@
 import React from 'react';
-import axios from 'axios';
-import FlightInformation from './FlightInformation';
-import Flight from './Flight';
+import '../index.css';
 
-const BASE_URL = 'http://localhost:3000/';
+import axios from 'axios';
+
+import Flight from './Flight';
+import SearchForm from './SearchForm';
+
+const RAILS_SECRETS_BASE_URL = 'http://localhost:3000/';
 
 class Search extends React.Component {
 
@@ -16,8 +19,8 @@ class Search extends React.Component {
 
       axios.get( RAILS_SECRETS_BASE_URL )
       .then( (res) => {
-        console.log('response:', res.data);
-        this.setState({ searchs: res.data.reverse() }); // save into state
+        console.log('response:', );
+        this.setState({ search: res.data.reverse() }); // save into state
       })
       .catch( console.warn );
 
@@ -52,7 +55,7 @@ class Search extends React.Component {
         // using the spread operator '...', and add our new search at
         // the start (newest first).
         this.setState({
-          searchs: [ res.data, ...this.state.searchs ]
+          search: [ res.data, ...this.state.search ]
         });
 
       }) // .then
@@ -64,7 +67,20 @@ class Search extends React.Component {
     render(){
 
       return (
-        <div className="App">
+        <div className="Home">
+
+                  <form onSubmit={ this.handleSubmit }>
+                  <label> Origin:
+                  <option value={ this.origin }/>
+                  </label><br/>
+
+                <label> Destination:
+                  <input type="search" placeholder="To" onInput={ this.handleChangeDestination }/>
+                  </label><br />
+
+                <input type="submit" value="Search" />
+
+                </form>
           <h1>Spill Yer Guts</h1>
 
           <SearchForm onSearchSubmit={ this.saveSearch } />
@@ -74,7 +90,7 @@ class Search extends React.Component {
           <h3>Terrible Search of the General Public</h3>
           <ul>
           {
-            this.state.searchs.map( search => <li key={ search.id }>{ search.content }</li> )
+            this.state.search.map( search => <li key={ search.id }>{ search.content }</li> )
           }
           </ul>
 
@@ -85,9 +101,9 @@ class Search extends React.Component {
 
   } // class Search
 
-
-
-        // state storing the origin and destination entered in the search form
+      //
+      //
+      //   state storing the origin and destination entered in the search form
       // state = {
       //   origin: []
       //   destination: []
@@ -115,29 +131,17 @@ class Search extends React.Component {
       //
       // render(){
       //     return(
-      //       <div className="Home">
-      //         <form onSubmit={ this.handleSubmit }>
-      //         <label> From:
-      //         <input type="search" placeholder="From" onInput={ this.handleChangeOrigin }/>
-      //         </label><br/>
       //
-      //         <label> To:
-      //         <input type="search" placeholder="To" onInput={ this.handleChangeDestination }/>
-      //         </label><br />
       //
-      //       <input type="submit" value="Search" />
       //
-      //       </form>
+      //
+      //         Search form
+      //             input for origin
+      //             input for destination
+      //             Search button
 
-
-
-              // Search form
-                  // input for origin
-                  // input for destination
-                  // Search button
-    //
-    //       ); // return
-    //   } // render
+          // ); // return
+    //   // } // render
     // } // class Search
 
 export default Search;
