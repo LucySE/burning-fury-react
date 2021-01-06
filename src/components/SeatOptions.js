@@ -2,12 +2,33 @@ import React from 'react';
 
 class SeatOptions extends React.Component {
 
+    //     {/* 
+    // // Form for seat selection (Might be its own component?)
+    //     // Display seats
+    //         // Row labels
+    //         // Column labels
+    //         // Seats
+    //             // Available
+    //             // Unavailable
+    //             // Selected */}
+
     state = {
-        seatValue: '-'
+        seatValue: '-',
+        selection: 'x'
+        // isTaken: false
     };
 
     rows = this.props.rows;
     columns = this.props.columns;
+
+    // checkSeatAvailable = () => {
+    //     // if (seatUnavilable) {
+    //         // this.setState({isTaken: true})
+    //     // else {
+    //         // this.setState({isTaken: false})
+    //     // }
+    //     // }
+    // }
 
     createColumnLabels = () => {
         let labels = [];
@@ -35,18 +56,22 @@ class SeatOptions extends React.Component {
 
             // Add seats to an individual row
             for (let j = 0; j < this.columns; j++){
-                if (i === 2 && j === 2){
-                    seat.push(<td>{`X`}</td>)
-                } else {
-                    // seat.push(<td>{`C${j + 1}`}</td>)
-                    seat.push(
-                    <td>
-                        <button 
-                            onClick={() => { alert(String.fromCharCode(j + 1 + 64) + (i+1)); }}>
-                            {this.state.seatValue}
-                        </button>
-                    </td>)
-                }
+                // if (this.state.isTaken){
+                //     seat.push(<td>{`X`}</td>)
+                // } else {
+                    if (String.fromCharCode(i + 1 + 64) + j === this.state.selection){
+                        seat.push(<td>H</td>)
+                    } else {
+                        seat.push(
+                        <td>
+                            <button 
+                                onClick={() => this.setState({selection: String.fromCharCode(i + 1 + 64) + j})}
+                            >
+                                {this.state.seatValue}
+                            </button>
+                        </td>)
+                    }
+                // }
             } // for (j)
 
             // Add the row to the array of seats
