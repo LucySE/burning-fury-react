@@ -34,7 +34,7 @@ class Search extends React.Component {
 
       render(){
           return(
-              <form
+              <form>
 
               // Search form
                   // input for origin
