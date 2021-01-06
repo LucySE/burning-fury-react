@@ -7,8 +7,11 @@ class Search extends React.Component {
   destination: 'Melbourne'
   }; //state
 
-  handleChange = (ev) => {
+  handleOriginChange = (ev) => {
     this.setState({ origin: ev.target.value });
+  } //handlechange
+  handleDestinationChange = (ev) => {
+    this.setState({ destination: ev.target.value });
   } //handlechange
   handleSubmit = (ev) => {
     ev.preventDefault();
@@ -17,23 +20,34 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-        <label>
-        Origin:
-        <select value={this.state.origin} onChange={this.handleChange}>
-        </select>
-      </label>
-        <label>
-        Destination:
-        <select value={this.state.destination} onChange={this.handleChange}>
-        </select>
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-      </div>
-      );
 
-  } //render
-} //class Search
+
+          <form onSubmit={ this.handleSubmit }>
+          <label>Search Flights
+          <select value={this.state.origin} onChange={this.handleOriginChange}>
+            <option value="Melbourne">Melbourne</option>
+
+          <option value="Sydney">Sydney></option>
+
+
+
+
+          </select>
+
+
+        </label>
+                <input type="submit" value="Submit" />
+
+
+
+
+
+            </form>
+
+
+
+        );
+
+      } //render
+      } //class Search
 export default Search;
