@@ -34,7 +34,8 @@ const SeatOptions = (props) => {
                 if (i === 2 && j === 2){
                     seat.push(<td>{`X`}</td>)
                 } else {
-                    seat.push(<td>{`C${j + 1}`}</td>)
+                    // seat.push(<td>{`C${j + 1}`}</td>)
+                    seat.push(<td><button>A{j}</button></td>)
                 }
             } // for (j)
 
@@ -57,8 +58,9 @@ const SeatOptions = (props) => {
                 {createSeats()}
             </tbody>
         </table>
-
     ); // return
 } // SeatOptions
+
+// Selected option will need to be sent to the flight page (parent) via a function
 
 export default SeatOptions;
