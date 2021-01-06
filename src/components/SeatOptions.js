@@ -2,6 +2,10 @@ import React from 'react';
 
 class SeatOptions extends React.Component {
 
+    state = {
+        seatValue: '-'
+    };
+
     rows = this.props.rows;
     columns = this.props.columns;
 
@@ -39,8 +43,7 @@ class SeatOptions extends React.Component {
                     <td>
                         <button 
                             onClick={() => { alert(String.fromCharCode(j + 1 + 64) + (i+1)); }}>
-                            O
-                            {/* {props.square} */}
+                            {this.state.seatValue}
                         </button>
                     </td>)
                 }
