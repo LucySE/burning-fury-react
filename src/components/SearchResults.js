@@ -1,11 +1,29 @@
-import axios from 'axios';
 import React from 'react';
-import FlightInformation from './FlightInformation.js'
+
+import axios from 'axios';
+
 import Search from './Search.js'
 
-const BASE_URL = 'http://localhost:3000/';
+const BASE_URL = 'http://localhost:3000'
 
 class SearchResults extends React.Component {
+
+    state ={
+      origin: [],
+      destination: []
+    };
+
+    fetchFlights = () => {
+
+      axios.get( BASE_URL + "/flights")
+      .then( (res) => {
+        console.log('response:', res.data);
+        this.setState({ origin: res.data.origin });
+        this.setState({ destination: res.data.destination }); // save// save into state
+      })
+      .catch( console.warn );
+
+    } // fetchFlights
 
     render(){
         return(
