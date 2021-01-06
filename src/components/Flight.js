@@ -7,7 +7,8 @@ const BASE_URL = 'http://localhost:3000/';
 class Flight extends React.Component {
 
     state = {
-        airplane: {},
+        rows: null,
+        columns: null,
         // Hardcoded flight information. 
         flight: {
             number: 'BA123',
@@ -24,6 +25,8 @@ class Flight extends React.Component {
         axios.get(planeURL)
         .then((res) => {
             console.log('plane response:', res.data);
+            this.setState({rows: res.data.rows});
+            this.setState({columns: res.data.columns});
         })
         .catch(console.warn())
     }
@@ -69,9 +72,9 @@ class Flight extends React.Component {
                             // Selected */}
 
                             {/* display rows and columns */}
-                            {/* <p>Rows: {this.state.airplane.rows}</p>
-                            <p>Columns: {this.state.airplane.columns}</p>
-             */}
+                            <p>Rows: {this.state.rows}</p>
+                            <p>Columns: {this.state.columns}</p>
+            
 
                 {/* // Seat selection
                 // Submit button */}
