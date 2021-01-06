@@ -18,16 +18,17 @@ class Search extends React.Component {
   console.log('search for:', this.state.origin);
   } // handle Submit
 
+
   render() {
     return (
 
 
           <form onSubmit={ this.handleSubmit }>
-          <label>Search Flights
+          <label>Origin
           <select value={this.state.origin} onChange={this.handleOriginChange}>
             <option value="Melbourne">Melbourne</option>
 
-          <option value="Sydney">Sydney></option>
+          <option value="Sydney">Sydney</option>
 
 
 
@@ -36,6 +37,19 @@ class Search extends React.Component {
 
 
         </label>
+        <label>Destination
+        <select value={this.state.destination} onChange={this.destinationChange}>
+          <option value="Melbourne">Melbourne</option>
+
+        <option value="Sydney">Sydney></option>
+
+
+
+
+        </select>
+
+
+      </label>
                 <input type="submit" value="Submit" />
 
 

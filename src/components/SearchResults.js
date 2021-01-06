@@ -1,12 +1,17 @@
+import axios from 'axios';
 import React from 'react';
+import FlightInformation from './FlightInformation.js'
+import Search from './Search.js'
+
+const BASE_URL = 'http://localhost:3000/';
 
 class SearchResults extends React.Component {
 
     render(){
         return(
             <div>
-                <h1>Placeholder for flight search results</h1>
-                {/* 
+                <h2>Search results for "{ this.props.match.params.query }":</h2>
+                {/*
                     - Display list of flights based on search query
                     - Each flight links to a flight page
                         - ul

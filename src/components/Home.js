@@ -1,9 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 
-import Search from './Search';
 import Flight from './Flight';
+import Search from './Search';
 import SearchResults from './SearchResults';
+import SeatingDiagram from './SeatingDiagram';
+import SeatOptions from './SeatOptions'
 
 import { Route, Link, HashRouter as Router  } from 'react-router-dom';
 
@@ -33,8 +35,8 @@ class Home extends React.Component {
           <hr />
 
           <Route exact path="/home" component={ Home } />
-          <Route exact path="/search/:query" component={ SearchResults } /> 
-          <Route exact path="/flight/:flightNumber" component={ Flight } /> 
+          <Route exact path="/search/:query" component={ SearchResults } />
+          <Route exact path="/flight/:flightNumber" component={ Flight } />
 
         </Router>
 
