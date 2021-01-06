@@ -7,8 +7,9 @@ import Flight from './Flight';
 
 class Search extends React.Component {
       // state storing the origin and destination entered in the search form
-    constructor(){
+    constructor (){
       super();
+
       this.state = {
       origin: '',
       destination: ''
@@ -25,12 +26,15 @@ class Search extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 
       // prevents page from reloading on form submission
-    handleChangeOrigin =
+    this.handleClearForm = this.handleClearForm.bind(this);
       // send search query (origin and destination) to parent component (Home)
+    handleSubmit(){
+      // **Form Submission Logic**
+    }
 
       render(){
           return(
-              <h1>Placeholder for flight search form</h1>
+              <form
 
               // Search form
                   // input for origin
