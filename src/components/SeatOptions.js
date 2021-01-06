@@ -35,7 +35,7 @@ const SeatOptions = (props) => {
                     seat.push(<td>{`X`}</td>)
                 } else {
                     // seat.push(<td>{`C${j + 1}`}</td>)
-                    seat.push(<td><button>A{j}</button></td>)
+                    seat.push(<td><button onClick={function() { alert(String.fromCharCode(j + 1 + 64) + (i+1)); }}>O</button></td>)
                 }
             } // for (j)
 
