@@ -1,9 +1,6 @@
 import React from 'react';
 import FlightInformation from './FlightInformation.js'
 
-// flight details functional component
-// Render flight details based on route params for flight
-
 class Flight extends React.Component {
 
     state = {
