@@ -4,7 +4,7 @@ class SeatOptions extends React.Component {
 
     state = {
         seatValue: '-',
-        selection: '-'
+        selection: 'r'
         // isTaken: false
     };
 
@@ -50,7 +50,7 @@ class SeatOptions extends React.Component {
                     seat.push(
                     <td>
                     {/* If the user selects a seat, show an alert indicating seat location */}
-                        <button 
+                        <button
                             onClick={() => {
                                 this.setState({selection: String.fromCharCode(i + 1 + 64) + j})
                                 alert('You selected: ' + String.fromCharCode(j + 1 + 64) + (i+1));
