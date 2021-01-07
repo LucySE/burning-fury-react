@@ -36,14 +36,27 @@ class SearchResults extends React.Component {
     render(){
         return(
             <div>
-                <h2>Search results for "{ this.props.match.params.query }":</h2>
-                <ul> <li> Flight ID</li> {
-                this.state.flights.map( flight =>  <li key={ flight.id }>{flight.flightNumber}  {flight.origin} > {flight.destination} {flight.date} </li>)
+                <h2>
+                  Search results for "{ this.props.match.params.origin } to
+                  { this.props.match.params.destination }":
+                </h2>
+                <ul>
+                  <li>
+                    Flight ID
+                  </li>
+                  {
+                    this.state.flights.map( flight => {
 
+                      // if(this.props.match.params.origin === flight.origin && this.props.match.params.destination === flight.destination){
 
+                        <li key={ flight.id }>
+                          {flight.flightNumber}  {flight.origin} > {flight.destination} {flight.date}
+                        </li>
 
+                      // } //end if
+                    }) //end off arrow inside map
+                  }
 
-              }
                 </ul>
 
             </div>
