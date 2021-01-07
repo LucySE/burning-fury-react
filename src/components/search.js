@@ -15,7 +15,8 @@ class Search extends React.Component {
   } //handlechange
   handleSubmit = (ev) => {
     ev.preventDefault();
-  console.log('search for:', this.state.origin);
+    this.props.history.push(`/search/${ this.state.origin}/${ this.state.destination}`)
+  // console.log('search for:', this.state.origin);
   } // handle Submit
 
 

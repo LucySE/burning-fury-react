@@ -30,18 +30,15 @@ class SearchResults extends React.Component {
 
       this.fetchFlights();
 
-
-
-
-
       }
+
 
     render(){
         return(
             <div>
                 <h2>Search results for "{ this.props.match.params.query }":</h2>
-                <ul>{
-                this.state.flights.map( flight => <li key={ flight.id }>{flight.origin}</li>)
+                <ul> <li> Flight ID</li> {
+                this.state.flights.map( flight =>  <li key={ flight.id }>{flight.flightNumber}  {flight.origin} > {flight.destination} {flight.date} </li>)
 
 
 
