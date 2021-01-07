@@ -28,13 +28,13 @@ class Search extends React.Component {
           <label>Origin
           <select value={this.state.origin} onChange={this.handleOriginChange}>
 
-          <option value="Melbourne">Melbourne</option>
+          <option value="melbourne">melbourne</option>
 
-          <option value="Sydney">Sydney</option>
+          <option value="sydney">sydney</option>
 
-          <option value="Perth">Perth</option>
+          <option value="perth">perth</option>
 
-          <option value="Singapore">Singapore</option>
+          <option value="singapore">singapore</option>
 
 
 
@@ -44,14 +44,14 @@ class Search extends React.Component {
 
         </label>
         <label>Destination
-        <select value={this.state.destination} onChange={this.destinationChange}>
-          <option value="Melbourne">Melbourne</option>
+        <select value={this.state.destination} onChange={this.handleDestinationChange}>
+          <option value="melbourne">melbourne</option>
 
-          <option value="Sydney">Sydney</option>
+          <option value="sydney">sydney</option>
 
-          <option value="Perth">Perth</option>
+          <option value="perth">perth</option>
 
-          <option value="Singapore"> Singapore</option>
+          <option value="singapore"> singapore</option>
 
 
 
